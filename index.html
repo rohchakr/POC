@@ -1,0 +1,21 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  function sendRequest() {
+    // Change the URL to your desired endpoint
+    var url = "https://official-joke-api.appspot.com/random_joke";
+    // Send a GET request using jQuery
+    $.get(url, function(data, status) {
+      // Display the response data and status in a paragraph element
+      $("#response").html(JSON.stringify(data) + "<br>Status: " + status);
+    });
+  }
+</script>
+</head>
+<body>
+<h1>Embeddable Widget</h1>
+<button onclick="sendRequest()">Send Request</button>
+<p id="response"></p>
+</body>
+</html>
